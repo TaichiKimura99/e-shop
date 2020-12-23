@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Item.create(name:"Java Book",price:3000,childflg:false,category_id:1)
+Item.create(name:"Ruby Book",price:4000,childflg:false,category_id:1)
+Item.create(name:"PHP Book",price:2000,childflg:false,category_id:1)
+Item.create(name:"テント",price:45000,childflg:false,category_id:2)
+Item.create(name:"寝袋",price:6000,childflg:false,category_id:2)
+Item.create(name:"焚き火台",price:8000,childflg:false,category_id:2)
+Item.create(name:"レゴブロック",price:19000,childflg:false,category_id:2)
+Item.create(name:"くろひげ危機一髪",price:3000,childflg:false,category_id:2)
+Item.create(name:"釣竿",price:35000,childflg:false,category_id:2)
