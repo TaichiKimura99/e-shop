@@ -1,5 +1,5 @@
 export const fetchItems = (items) => ({
-    type: 'FETCH_TASKS',
+    type: 'FETCH_ITEMS',
     payload:{
         items
     }

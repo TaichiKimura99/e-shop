@@ -1,13 +1,24 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+//containerを入れる
+import App from './containers/App';
+import {createStore,applyMiddleware} from 'redux';
 import reportWebVitals from './reportWebVitals';
+import appReducer from './reducers/App'
+import {BrowserRouter as Router,Route} from 'react-router-dom'
+import { render } from 'react-dom';
+import {Provider} from 'react-redux';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+const store = createStore(
+  appReducer
+  );
+
+render(
+  <Provider store ={store}>
+    <Router>
+      <Route path = "/" component={App}/>
+    </Router>
+  </Provider>,
   document.getElementById('root')
 );
 

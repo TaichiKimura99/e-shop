@@ -1,11 +1,16 @@
 const initialState = {
-
+    items:[
+            {
+                name:'',
+                price:''
+            }
+        ]
 }
 
-function itemReducer(state = initialState,action){
+function appReducer(state = initialState,action){
 
     switch(action.type){
-        case 'FETCH_TASKS':
+        case 'FETCH_ITEMS':
             return {
               ...state,
               items: action.payload.items
@@ -19,3 +24,5 @@ function itemReducer(state = initialState,action){
 
 
 }
+
+export default appReducer;
