@@ -1,4 +1,4 @@
-import App from './../components/App'
+import AppAllResult from './../components/AppAllResult'
 import {connect} from 'react-redux'
 import {fetchItems} from './../actions/App'
 
@@ -28,4 +28,4 @@ function mapDispatchToProps(dispatch){
     }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(App)
+export default connect(mapStateToProps,mapDispatchToProps)(AppAllResult)

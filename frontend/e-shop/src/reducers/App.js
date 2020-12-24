@@ -2,9 +2,11 @@ const initialState = {
     items:[
             {
                 name:'',
-                price:''
+                price:'',
+                id:0
             }
-        ]
+        ],
+    searchKey:''
 }
 
 function appReducer(state = initialState,action){
@@ -14,15 +16,23 @@ function appReducer(state = initialState,action){
             return {
               ...state,
               items: action.payload.items
-            }
+            };
+        case 'INPUT_SEARCH_TEXT':
+            return{
+                ...state,
+                searchKey: action.payload.searchKey
+            };
+        case 'SEARCH_CLICK':
+                return{
+                    ...state,
+                    items: action.payload.items,
+                    searchKey: action.payload.searchKey
+                };
         default:
             return {
                 ...state
             }
     }
-        
-
-
 }
 
 export default appReducer;

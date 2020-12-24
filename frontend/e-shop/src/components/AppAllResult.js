@@ -1,7 +1,6 @@
 import React from 'react'
-import Search from './../containers/Search'
 
-class App extends React.Component{
+class AppAllResult extends React.Component{
     //Storeから値を取り出すのは、Containerの役割なので不要
     //const{task,tasks}=store.getState();
      
@@ -22,7 +21,6 @@ class App extends React.Component{
         }=this.props;
         return (
           <div>
-            <Search />
             <table>
               
                 <thead>
@@ -54,4 +52,4 @@ class App extends React.Component{
     // t.integer "price"
 }
 
-export default App;
+export default AppAllResult;

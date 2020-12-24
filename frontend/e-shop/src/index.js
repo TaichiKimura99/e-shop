@@ -2,6 +2,7 @@ import React from 'react';
 import './index.css';
 //containerを入れる
 import App from './containers/App';
+import AppAllResult from './containers/AppAllResult';
 import {createStore,applyMiddleware} from 'redux';
 import reportWebVitals from './reportWebVitals';
 import appReducer from './reducers/App'
@@ -16,7 +17,8 @@ const store = createStore(
 render(
   <Provider store ={store}>
     <Router>
-      <Route path = "/" component={App}/>
+      <Route exact path = "/" component={App}/>
+      <Route path = "/items" component={AppAllResult} />
     </Router>
   </Provider>,
   document.getElementById('root')
