@@ -23,10 +23,10 @@ class App extends React.Component{
         return (
           <div>
             <Search />
-            <table>
-              
+            <table>          
                 <thead>
                       <tr>
+                          <th>カテゴリ</th>
                           <th>商品名</th>
                           <th>価格</th>
                       </tr>
@@ -38,6 +38,7 @@ class App extends React.Component{
                 items.map(function(item,i){
                   return(
                       <tr key={item.id}>
+                          <td>{item.category.name}</td>
                           <td>{item.name}</td>
                           <td>{item.price}</td>
                       </tr>

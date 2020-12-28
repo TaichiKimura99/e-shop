@@ -3,7 +3,10 @@ const initialState = {
             {
                 name:'',
                 price:'',
-                id:0
+                id:0,
+                category:{
+                    name:''
+                }
             }
         ],
     searchKey:''
