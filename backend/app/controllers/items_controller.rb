@@ -7,9 +7,9 @@ class ItemsController < ApplicationController
     else
       #like検索する
       #モデル名.where('カラム名 like ?','検索したい文字列')
-      key = params[:name].to_s
+      name = params[:name].to_s
       #, "%#{search}%"]
-      @items = Item.joins(:category).where('items.name like ?',"%Ruby%").to_json(include: :category)
+      @items = Item.joins(:category).where('items.name like ?',"%#{name}%").to_json(include: :category)
       render json: @items
     end 
   end
