@@ -26,11 +26,12 @@ class Search extends React.Component{
         //     );
         // const selectBox = selectBoxYouso.join;
         const selectBox = categories.map((category) => {
-            return (
+            return(
             <option>
                 {category.name}
             </option>
-            );
+            )
+            
         });
 
 //         <option value="">選択してください</option>
