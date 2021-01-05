@@ -19,6 +19,12 @@ export const searchClick = (items)=>({
     }
 })
 
+export const fetchCategory = (categories)=>({
+    type: 'FETCH_CATEGORY',
+    payload:{
+        categories
+    }
+})
 
 // export const fetchTasks = (tasks) => ({
 //     type: 'FETCH_TASKS',

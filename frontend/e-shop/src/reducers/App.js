@@ -9,7 +9,10 @@ const initialState = {
                 }
             }
         ],
-    searchKey:''
+    searchKey:'',
+    categories: [{
+        name: ''
+    }]
 }
 
 function appReducer(state = initialState,action){
@@ -19,6 +22,11 @@ function appReducer(state = initialState,action){
             return {
               ...state,
               items: action.payload.items
+            };
+        case 'FETCH_CATEGORY':
+            return {
+                ...state,
+                categories: action.payload.categories
             };
         case 'INPUT_SEARCH_TEXT':
             return{
