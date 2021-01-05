@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  birthday: 2021-01-05
+  gender: 1
+  token: MyString
+  admin: false
+  childmode: false
+
+two:
+  name: MyString
+  birthday: 2021-01-05
+  gender: 1
+  token: MyString
+  admin: false
+  childmode: false

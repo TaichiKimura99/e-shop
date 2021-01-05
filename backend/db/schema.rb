@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_23_090838) do
+ActiveRecord::Schema.define(version: 2021_01_05_041733) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "name"
@@ -23,6 +23,17 @@ ActiveRecord::Schema.define(version: 2020_12_23_090838) do
     t.integer "price"
     t.boolean "childflg"
     t.integer "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
+    t.string "name"
+    t.date "birthday"
+    t.integer "gender"
+    t.string "token"
+    t.boolean "admin"
+    t.boolean "childmode"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
