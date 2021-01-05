@@ -12,7 +12,8 @@ const initialState = {
     searchKey:'',
     categories: [{
         name: ''
-    }]
+    }],
+    searchCategory: '全て'
 }
 
 function appReducer(state = initialState,action){
@@ -39,6 +40,12 @@ function appReducer(state = initialState,action){
                     items: action.payload.items,
                     searchKey: action.payload.searchKey
                 };
+        case 'INPUT_SEARCH_CATEGORY':
+            return{
+                ...state,
+                searchCategory: action.payload.searchCategory
+            };
+        
         default:
             return {
                 ...state

@@ -15,7 +15,9 @@ class Search extends React.Component{
             inputSearchKey,
             searchClick,
             searchKey,
-            categories
+            categories,
+            inputSearchCategory,
+            searchCategory
         }=this.props;
 
         // const selectBoxYouso =  (
@@ -27,7 +29,7 @@ class Search extends React.Component{
         // const selectBox = selectBoxYouso.join;
         const selectBox = categories.map((category) => {
             return(
-            <option>
+            <option value = {category.name}>
                 {category.name}
             </option>
             )
@@ -39,12 +41,12 @@ class Search extends React.Component{
 // <option value="リンクについて">リンクについて</option>
         return(
             <div>
-                <select>
-                    <option>全て</option>
+                <select value = {searchCategory} onChange={(e)=>(inputSearchCategory(e.target.value))}>
+                    <option value = "全て">全て</option>
                     {selectBox}
                 </select>
                 <input type="text" id = "SearchText" value={searchKey} onChange={(e)=>(inputSearchKey(e.target.value))}/>
-                <input type="button" value = "検索" onClick ={()=>(searchClick(searchKey))}/>
+                <input type="button" value = "検索" onClick ={()=>(searchClick(searchKey,searchCategory))}/>
             </div>
 
         )

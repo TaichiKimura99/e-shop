@@ -1,16 +1,15 @@
 import Search from './../components/Search'
 import {connect} from 'react-redux'
-import {inputSearchKey,fetchItems,fetchCategory} from './../actions/App'
+import {inputSearchKey,fetchItems,fetchCategory,inputSearchCategory} from './../actions/App'
 
 //componentの描画に使う
-function mapStateToProps({searchKey,categories}){
+function mapStateToProps({searchKey,categories,searchCategory}){
     //　searchKey: = searchKey:？？？
     return {
         searchKey,
-        categories
+        categories,
+        searchCategory
     }
-
-
 }
 
 function mapDispatchToProps(dispatch){
@@ -18,10 +17,15 @@ function mapDispatchToProps(dispatch){
         inputSearchKey(text){
             dispatch(inputSearchKey(text));
         },
+        inputSearchCategory(text){
+            dispatch(inputSearchCategory(text));
+        },
 
-        async searchClick(text) {
+        async searchClick(searchText,categoryText) {
             //リクエストを送る
-            const response = await fetch("http://localhost:13000/items/?name=" + text );
+            //ifをそのまま使うと、responseが参照できなくなるので、アロー関数にする。
+            const response = await fetch("http://localhost:13000/items/?name=" + searchText + "&category=" + categoryText )
+
             //jsonをオブジェクトに書き換える。と思いきや、fetchが非同期処理
             //fetchが終わるまで待ってくれない。そのためundefindでエラーになる。
             //そこで、頭に、asyncをつける

@@ -12,6 +12,13 @@ export const inputSearchKey = (searchKey)=>({
     }
 })
 
+export const inputSearchCategory = (searchCategory)=>({
+    type: 'INPUT_SEARCH_CATEGORY',
+    payload:{
+        searchCategory
+    }
+})
+
 export const searchClick = (items)=>({
     type: 'SEARCH_CLICK',
     payload:{
