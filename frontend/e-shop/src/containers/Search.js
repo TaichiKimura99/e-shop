@@ -3,12 +3,13 @@ import {connect} from 'react-redux'
 import {inputSearchKey,fetchItems,fetchCategory,inputSearchCategory} from './../actions/App'
 
 //componentの描画に使う
-function mapStateToProps({searchKey,categories,searchCategory}){
+function mapStateToProps({appReducer}){
     //　searchKey: = searchKey:？？？
+    //{searchKey,categories,searchCategory}
     return {
-        searchKey,
-        categories,
-        searchCategory
+        searchKey: appReducer.searchKey,
+        categories: appReducer.categories,
+        searchCategory: appReducer.searchCategory
     }
 }
 

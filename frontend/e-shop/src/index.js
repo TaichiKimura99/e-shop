@@ -3,22 +3,29 @@ import './index.css';
 //containerを入れる
 import App from './containers/App';
 import AppAllResult from './containers/AppAllResult';
-import {createStore,applyMiddleware} from 'redux';
+import Users from './containers/Users';
+import {createStore,applyMiddleware, combineReducers} from 'redux';
 import reportWebVitals from './reportWebVitals';
 import appReducer from './reducers/App'
+import usersReducer from './reducers/Users'
 import {BrowserRouter as Router,Route} from 'react-router-dom'
 import { render } from 'react-dom';
 import {Provider} from 'react-redux';
 
-const store = createStore(
-  appReducer
-  );
+const rootReducer = combineReducers({
+  appReducer,
+  usersReducer,
+});
+
+
+const store = createStore(rootReducer);
 
 render(
   <Provider store ={store}>
     <Router>
       <Route exact path = "/" component={App}/>
       <Route path = "/items" component={AppAllResult} />
+      <Route path = "/users" component={Users} />
     </Router>
   </Provider>,
   document.getElementById('root')

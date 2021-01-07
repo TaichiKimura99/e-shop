@@ -3,10 +3,10 @@ import {connect} from 'react-redux'
 import {fetchItems} from './../actions/App'
 
 //componentの描画に使う
-function mapStateToProps({items}){
+function mapStateToProps({appReducer}){
     
     return {
-        items:items
+        items:appReducer.items
     }
 
 }
